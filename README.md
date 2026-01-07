@@ -70,12 +70,97 @@ Ngoài ra, nhóm sẽ **tự tìm hiểu và áp dụng ít nhất một công c
   - Màu sắc khó phân biệt
 - Công cụ đơn giản nhưng hiệu quả trong việc **nâng cao tư duy kiểm thử UI**
 
+------------------------------------------------
+
+## Bài tập thực hành kiểm thử với JUnit  
+**Chủ đề**: Phân tích dữ liệu điểm số học sinh
+
 ---
 
-## 📌 Ghi chú
-- Các bài thực hành tiếp theo sẽ được cập nhật vào repository này theo từng tuần
-- Mỗi bài thực hành sẽ bao gồm:
-  - Mô tả bài toán
-  - Công cụ sử dụng
-  - Kết quả đạt được
-  - Nhận xét & đánh giá
+### 🎯 1. Mục tiêu
+- Biết cách viết **kiểm thử tự động (Unit Test)** bằng **JUnit**
+- Áp dụng kiểm thử đơn vị cho các hàm xử lý dữ liệu
+- Biết cách **khai thác AI tạo sinh** để hỗ trợ:
+  - Viết mã nguồn
+  - Gợi ý test case
+  - Kiểm tra logic chương trình
+
+---
+
+### 📌 2. Mô tả bài toán
+Xây dựng chương trình Java dùng để **phân tích danh sách điểm số học sinh**.
+
+Chương trình gồm lớp `StudentAnalyzer` với hai chức năng chính:
+- Đếm số học sinh đạt loại **Giỏi** (điểm ≥ 8.0)
+- Tính **điểm trung bình hợp lệ** của danh sách điểm
+
+#### Yêu cầu xử lý:
+- Chỉ chấp nhận điểm trong khoảng **0 đến 10**
+- Bỏ qua các điểm:
+  - Nhỏ hơn 0
+  - Lớn hơn 10
+- Nếu danh sách rỗng → trả về **0**
+
+---
+
+### ⚙️ 3. Công cụ sử dụng
+- **Ngôn ngữ lập trình**: Java  
+- **IDE**: IntelliJ IDEA  
+- **Kiểm thử đơn vị**: JUnit 5  
+- **Quản lý mã nguồn**: GitHub  
+- **Quản lý công việc**: GitHub Issues  
+
+---
+
+### 📂 4. Cấu trúc thư mục
+unit-test/
+├── pom.xml
+├── src/
+│ ├── main/java/analyzer/StudentAnalyzer.java
+│ └── test/java/analyzer/StudentAnalyzerTest.java
+
+### 🧩 5. Mô tả chức năng
+
+#### 🔹 Hàm `countExcellentStudents()`
+- Đếm số học sinh có điểm **≥ 8.0**
+- Bỏ qua các điểm không hợp lệ
+- Trả về `0` nếu danh sách rỗng
+
+#### 🔹 Hàm `calculateValidAverage()`
+- Tính điểm trung bình các điểm hợp lệ (0–10)
+- Không tính điểm sai dữ liệu
+- Trả về `0` nếu không có điểm hợp lệ
+
+---
+
+### 🧪 6. Kiểm thử với JUnit
+Các test case được xây dựng theo các nhóm:
+
+#### ✔ Trường hợp bình thường
+- Danh sách có cả điểm hợp lệ và không hợp lệ
+- Danh sách toàn bộ điểm hợp lệ
+
+#### ✔ Trường hợp biên
+- Danh sách rỗng
+- Danh sách chỉ chứa điểm 0 hoặc 10
+
+#### ✔ Trường hợp dữ liệu sai
+- Có điểm < 0
+- Có điểm > 10
+
+➡️ Kết quả: **Tất cả các test case đều chạy thành công (PASS)**.
+
+---
+
+### ▶️ 7. Hướng dẫn chạy chương trình và kiểm thử
+
+#### Cách 1: Chạy bằng IntelliJ IDEA
+1. Mở project `unit-test`
+2. Chuột phải vào lớp `StudentAnalyzerTest`
+3. Chọn **Run 'StudentAnalyzerTest'**
+4. Quan sát kết quả kiểm thử
+
+#### Cách 2: Chạy bằng Maven
+Mở Terminal trong IntelliJ IDEA và chạy:
+```bash
+mvn test
