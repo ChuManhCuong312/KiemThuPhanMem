@@ -5,7 +5,7 @@
 - **Mã sinh viên**: BIT230065
 - **Lớp**: 23IT6
 - **SĐT**: 0962051934
-- **Gmail**" cmcuongwork@gamil.com
+- **Gmail**: cmcuongwork@gamil.com
 ## 📌 Giới thiệu
 Repository này được sử dụng để lưu trữ **toàn bộ bài tập thực hành** của môn **Kiểm thử phần mềm**.  
 Mục tiêu của các bài thực hành là giúp sinh viên:
