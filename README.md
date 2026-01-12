@@ -18,8 +18,6 @@ Mục tiêu của các bài thực hành bao gồm:
 - Vận dụng kiến thức kiểm thử vào **bài tập cá nhân và dự án nhóm**
 - Tiếp cận các **xu hướng kiểm thử hiện đại**, bao gồm việc ứng dụng **mô hình ngôn ngữ lớn (LLM)** trong kiểm thử
 
-Các bài thực hành **không bắt buộc bám sát từng chương lý thuyết**, tập trung vào việc rèn luyện kỹ năng thực tế.
-
 ---
 
 ## 3. Các công cụ kiểm thử được sử dụng
@@ -33,8 +31,6 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 3.6. Kiểm thử tĩnh mã nguồn: SonarQube  
 3.7. Quản lý lỗi và công việc: GitHub Issues, Jira  
 3.8. Tài liệu và báo cáo: Test Plan, Test Case, Test Report  
-
-Ngoài ra, nhóm tự nghiên cứu và áp dụng **ít nhất một công cụ kiểm thử có sử dụng mô hình ngôn ngữ lớn (LLM)** nhằm cập nhật các phương pháp kiểm thử hiện đại.
 
 ---
 
