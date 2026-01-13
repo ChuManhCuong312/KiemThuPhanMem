@@ -100,12 +100,13 @@ Yêu cầu xử lý dữ liệu:
 - Quản lý công việc: GitHub Issues  
 
 #### 5.1.4. Cấu trúc thư mục
+```
 /unit-test/
 /├── pom.xml
 /├── src/
 /│ ├── main/java/analyzer/StudentAnalyzer.java
 /│ └── test/java/analyzer/StudentAnalyzerTest.java
-
+```
 
 #### 5.1.5. Mô tả chức năng
 
