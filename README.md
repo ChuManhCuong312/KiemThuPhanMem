@@ -28,7 +28,7 @@ Mục tiêu của các bài thực hành bao gồm:
 3.5. Kiểm thử an toàn: OWASP ZAP Proxy  
 3.6. Kiểm thử tĩnh mã nguồn: SonarQube  
 3.7. Quản lý lỗi và công việc: GitHub Issues, Jira  
-3.8. Tài liệu và báo cáo: kế hoạch kiểm thử (Test Plan), trường hợp kiểm thử (Test Case), báo cáo kiểm thử (Test Report)  
+3.8. Tài liệu và báo cáo: kế hoạch kiểm thử (test plan), trường hợp kiểm thử (test case), báo cáo kiểm thử (test rreport)  
 
 ---
 
