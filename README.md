@@ -5,12 +5,12 @@
 - Mã sinh viên: BIT230065  
 - Lớp: 23IT6  
 - Số điện thoại: 0962051934  
-- Email: cmcuongwork@gamil.com  
+- Email: cmcuongwork@gmail.com  
 
 ---
 
 ## 2. Giới thiệu
-Repository này được sử dụng để lưu trữ **toàn bộ bài tập thực hành** của môn **Kiểm thử phần mềm**.
+Kho lưu trữ (Repository) này được sử dụng để lưu trữ **toàn bộ bài tập thực hành** của môn **Kiểm thử phần mềm**.
 
 Mục tiêu của các bài thực hành bao gồm:
 - Làm quen và sử dụng các **công cụ kiểm thử phần mềm phổ biến**
@@ -21,8 +21,6 @@ Mục tiêu của các bài thực hành bao gồm:
 ---
 
 ## 3. Các công cụ kiểm thử được sử dụng
-Trong suốt học phần, sinh viên thực hành với các công cụ sau:
-
 3.1. Kiểm thử đơn vị: JUnit  
 3.2. Kiểm thử tích hợp / API: Postman  
 3.3. Kiểm thử giao diện người dùng: Cypress, Playwright  
@@ -30,7 +28,7 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 3.5. Kiểm thử an toàn: OWASP ZAP Proxy  
 3.6. Kiểm thử tĩnh mã nguồn: SonarQube  
 3.7. Quản lý lỗi và công việc: GitHub Issues, Jira  
-3.8. Tài liệu và báo cáo: Test Plan, Test Case, Test Report  
+3.8. Tài liệu và báo cáo: kế hoạch kiểm thử (Test Plan), trường hợp kiểm thử (Test Case), báo cáo kiểm thử (Test Report)  
 
 ---
 
@@ -51,7 +49,7 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 
 #### 4.1.3. Kết quả đạt được
 - Tên bài test: Can't Unsee  
-- Điểm số: 7830  
+- Điểm số: 7330  
 - Xếp hạng: Gold (Top 10%)  
 - Thời gian hoàn thành: khoảng 09 phút  
 
@@ -75,7 +73,7 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 - Áp dụng kiểm thử đơn vị cho các hàm xử lý dữ liệu
 - Biết cách khai thác **AI tạo sinh** để:
   - Hỗ trợ viết mã nguồn
-  - Gợi ý test case
+  - Gợi ý trường hợp kiểm thử (test case)
   - Kiểm tra và phân tích logic chương trình
 
 #### 5.1.2. Mô tả bài toán
@@ -133,7 +131,7 @@ Các test case được xây dựng theo các nhóm sau:
   - Có điểm nhỏ hơn 0
   - Có điểm lớn hơn 10
 
-Kết quả: **Tất cả các test case đều chạy thành công (PASS)**.
+Kết quả: **Tất cả các test case đều chạy thành công**.
 
 #### 5.1.7. Hướng dẫn chạy chương trình và kiểm thử
 
@@ -158,7 +156,7 @@ mvn test
 - Làm quen với **Cypress** – công cụ kiểm thử E2E phổ biến cho ứng dụng web
 - Thực hành xây dựng kịch bản kiểm thử mô phỏng **hành vi thực tế của người dùng**
 - Rèn luyện kỹ năng:
-  - Viết test case tự động
+  - Viết trường hợp kiểm thử (test case) tự động
   - Xác định luồng nghiệp vụ chính
   - Phát hiện lỗi giao diện và chức năng
 
@@ -172,50 +170,7 @@ Thực hiện kiểm thử End-to-End cho một **ứng dụng Web mẫu** với
 Các kịch bản kiểm thử tập trung vào:
 - Tính đúng đắn của luồng nghiệp vụ
 - Khả năng phản hồi của giao diện
-- Tính ổn định của ứng dụng khi người dùng thao tác liên tục
-
-#### 6.1.3. Công cụ và công nghệ sử dụng
-- Ngôn ngữ lập trình: JavaScript  
-- Nền tảng: Node.js  
-- Công cụ kiểm thử: Cypress  
-- Trình duyệt kiểm thử: Chrome / Electron  
-- Quản lý mã nguồn: GitHub  
-
-#### 6.1.4. Cấu trúc thư mục
-```text
-/cypress-e2e/
-├── cypress/
-│   ├── e2e/
-│   │   └── sample.cy.js
-│   ├── fixtures/
-│   ├── support/
-├── cypress.config.js
-├── package.json
-```
-#### 6.1.5. Mô tả các kịch bản kiểm thử
-
-Các kịch bản kiểm thử End-to-End được xây dựng dựa trên các hành vi cơ bản của người dùng khi sử dụng ứng dụng web.
-
-**Kịch bản 1: Truy cập trang chủ**
-- Người dùng truy cập vào URL của ứng dụng
-- Trang web được tải thành công
-- Tiêu đề trang hiển thị đúng theo thiết kế
-
-**Kịch bản 2: Tương tác với giao diện**
-- Người dùng nhập dữ liệu vào ô input
-- Nhấn nút thực hiện hành động
-- Hệ thống tiếp nhận và xử lý dữ liệu
-
-**Kịch bản 3: Kiểm tra kết quả hiển thị**
-- Thông báo hoặc kết quả được hiển thị sau khi thao tác
-- Nội dung hiển thị đúng với dữ liệu người dùng đã nhập
-- Không xảy ra lỗi giao diện trong quá trình thực hiện
-
----
-
-#### 6.1.6. Kết quả kiểm thử
-- Tất cả các kịch bản kiểm thử đều được thực thi thành công
-- Các test case đều đạt trạng thái **PASS**
+- Tính ổn định của ứng dụng khi người dùng ththành
 - Ứng dụng hoạt động ổn định trong các luồng kiểm thử chính
 - Không phát hiện lỗi nghiêm trọng ảnh hưởng đến trải nghiệm người dùng
 
