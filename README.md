@@ -196,6 +196,8 @@ Bước 4: Chạy kiểm thử ở chế độ tự động (headless):
 ```bash
 npx cypress run
 ```
+Ảnh cắt mã khi chạy theo trường hợp kiểm thử với thêm vào giỏ hàng:
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/6e64cd4e-2850-4e76-889e-2a3cfe9d6843" />
 
 ####6.1.8. Nhận xét và đánh giá
 - Cypress cho phép kiểm thử End-to-End một cách trực quan và dễ sử dụng
