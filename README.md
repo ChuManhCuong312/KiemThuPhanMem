@@ -28,7 +28,7 @@ Mục tiêu của các bài thực hành bao gồm:
 3.5. Kiểm thử an toàn: OWASP ZAP Proxy  
 3.6. Kiểm thử tĩnh mã nguồn: SonarQube  
 3.7. Quản lý lỗi và công việc: GitHub Issues, Jira  
-3.8. Tài liệu và báo cáo: kế hoạch kiểm thử (test plan), trường hợp kiểm thử (test case), báo cáo kiểm thử (test rreport)  
+3.8. Tài liệu và báo cáo: kế hoạch kiểm thử (test plan), trường hợp kiểm thử (test case), báo cáo kiểm thử (test report)  
 
 ---
 
@@ -48,17 +48,17 @@ Mục tiêu của các bài thực hành bao gồm:
 - Trang Web đánh giá UI/UX: https://cantunsee.space/
 
 #### 4.1.3. Kết quả đạt được
-- Tên bài test: Can't Unsee  
+- Tên bài kiểm tratra: Can't Unsee  
 - Điểm số: 7330  
 - Xếp hạng: Gold (Top 10%)  
 - Thời gian hoàn thành: khoảng 09 phút  
 
-Ảnh chụp kết quả có kèm dấu hiệu cá nhân (đăng nhập trình duyệt) được lưu trong file `Cantunsee.png`.
+Ảnh chụp kết quả có kèm dấu hiệu cá nhân (đăng nhập trình duyệt) được lưu trong tài liệu `Cantunsee.png`.
 <img width="1918" height="1199" alt="image" src="https://github.com/user-attachments/assets/0d320156-09e6-47d6-bd82-7db9f94247ed" />
 
 
 #### 4.1.4. Nhận xét và đánh giá
-- Bài test giúp rèn luyện khả năng phát hiện **các lỗi giao diện nhỏ nhưng ảnh hưởng lớn đến trải nghiệm người dùng**
+- Bài kiểm tra giúp rèn luyện khả năng phát hiện **các lỗi giao diện nhỏ nhưng ảnh hưởng lớn đến trải nghiệm người dùng**
 - Một số lỗi thường gặp:
   - Sai lệch căn lề
   - Khoảng cách giữa các thành phần không đồng đều
@@ -71,7 +71,7 @@ Mục tiêu của các bài thực hành bao gồm:
 ### 5.1. Chủ đề: Phân tích dữ liệu điểm số học sinh
 
 #### 5.1.1. Mục tiêu
-- Nắm được cách viết **kiểm thử tự động (Unit Test)** bằng **JUnit**
+- Nắm được cách viết **kiểm thử tự động (unit ttest)** bằng **JUnit**
 - Áp dụng kiểm thử đơn vị cho các hàm xử lý dữ liệu
 - Biết cách khai thác **AI tạo sinh** để:
   - Hỗ trợ viết mã nguồn
@@ -121,7 +121,7 @@ Yêu cầu xử lý dữ liệu:
 - Trả về 0 nếu không có điểm hợp lệ  
 
 #### 5.1.6. Kiểm thử với JUnit
-Các test case được xây dựng theo các nhóm sau:
+Các trường hợp kiểm thử (test case) được xây dựng theo các nhóm sau:
 
 - Trường hợp bình thường:
   - Danh sách có cả điểm hợp lệ và không hợp lệ
@@ -135,10 +135,7 @@ Các test case được xây dựng theo các nhóm sau:
 
 Kết quả: **Tất cả các test case đều chạy thành công**.
 
-#### 5.1.7. Hướng dẫn chạy chương trình và kiểm thử
-
-Cách 1: Chạy bằng IntelliJ IDEA  
-1. Mở project `unit-test`  
+#### 5.1.7. Hướng dẫn chạy chương trình vàán `unit-test`  
 2. Chuột phải vào lớp `StudentAnalyzerTest`  
 3. Chọn `Run 'StudentAnalyzerTest'`  
 4. Quan sát kết quả kiểm thử  
