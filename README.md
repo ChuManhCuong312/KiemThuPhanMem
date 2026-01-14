@@ -54,6 +54,8 @@ Mục tiêu của các bài thực hành bao gồm:
 - Thời gian hoàn thành: khoảng 09 phút  
 
 Ảnh chụp kết quả có kèm dấu hiệu cá nhân (đăng nhập trình duyệt) được lưu trong file `Cantunsee.png`.
+<img width="1918" height="1199" alt="image" src="https://github.com/user-attachments/assets/0d320156-09e6-47d6-bd82-7db9f94247ed" />
+
 
 #### 4.1.4. Nhận xét và đánh giá
 - Bài test giúp rèn luyện khả năng phát hiện **các lỗi giao diện nhỏ nhưng ảnh hưởng lớn đến trải nghiệm người dùng**
