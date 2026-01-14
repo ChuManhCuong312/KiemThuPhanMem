@@ -45,7 +45,7 @@ Mục tiêu của các bài thực hành bao gồm:
 - Làm quen với tư duy **kiểm thử giao diện**
 
 #### 4.1.2. Công cụ sử dụng
-- Website đánh giá UI/UX: https://cantunsee.space/
+- Trang Web đánh giá UI/UX: https://cantunsee.space/
 
 #### 4.1.3. Kết quả đạt được
 - Tên bài test: Can't Unsee  
