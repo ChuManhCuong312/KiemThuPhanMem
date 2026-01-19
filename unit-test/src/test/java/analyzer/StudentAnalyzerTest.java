@@ -72,6 +72,11 @@ public class StudentAnalyzerTest {
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(null, -2.0, 15.0)));
     }
 
+    @Test
+    public void testCountExcellentStudents_NullList() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0, analyzer.countExcellentStudents(null));
+    }
 
     // ===== TEST calculateValidAverage =====
 
@@ -148,5 +153,11 @@ public class StudentAnalyzerTest {
     public void testCalculateValidAverage_OnlyMinScore0() {
         StudentAnalyzer analyzer = new StudentAnalyzer();
         assertEquals(0.0, analyzer.calculateValidAverage(Arrays.asList(0.0)));
+    }
+
+    @Test
+    public void testCalculateValidAverage_NullList() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0, analyzer.calculateValidAverage(null));
     }
 }
