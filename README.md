@@ -5,12 +5,12 @@
 - Mã sinh viên: BIT230065  
 - Lớp: 23IT6  
 - Số điện thoại: 0962051934  
-- Email: cmcuongwork@gamil.com  
+- Email: cmcuongwork@gmail.com  
 
 ---
 
 ## 2. Giới thiệu
-Repository này được sử dụng để lưu trữ **toàn bộ bài tập thực hành** của môn **Kiểm thử phần mềm**.
+Kho lưu trữ (Repository) này được sử dụng để lưu trữ **toàn bộ bài tập thực hành** của môn **Kiểm thử phần mềm**.
 
 Mục tiêu của các bài thực hành bao gồm:
 - Làm quen và sử dụng các **công cụ kiểm thử phần mềm phổ biến**
@@ -21,8 +21,6 @@ Mục tiêu của các bài thực hành bao gồm:
 ---
 
 ## 3. Các công cụ kiểm thử được sử dụng
-Trong suốt học phần, sinh viên thực hành với các công cụ sau:
-
 3.1. Kiểm thử đơn vị: JUnit  
 3.2. Kiểm thử tích hợp / API: Postman  
 3.3. Kiểm thử giao diện người dùng: Cypress, Playwright  
@@ -30,7 +28,7 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 3.5. Kiểm thử an toàn: OWASP ZAP Proxy  
 3.6. Kiểm thử tĩnh mã nguồn: SonarQube  
 3.7. Quản lý lỗi và công việc: GitHub Issues, Jira  
-3.8. Tài liệu và báo cáo: Test Plan, Test Case, Test Report  
+3.8. Tài liệu và báo cáo: kế hoạch kiểm thử (test plan), trường hợp kiểm thử (test case), báo cáo kiểm thử (test report)  
 
 ---
 
@@ -47,18 +45,20 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 - Làm quen với tư duy **kiểm thử giao diện**
 
 #### 4.1.2. Công cụ sử dụng
-- Website đánh giá UI/UX: https://cantunsee.space/
+- Trang Web đánh giá UI/UX: https://cantunsee.space/
 
 #### 4.1.3. Kết quả đạt được
-- Tên bài test: Can't Unsee  
-- Điểm số: 7830  
+- Tên bài kiểm tratra: Can't Unsee  
+- Điểm số: 7330  
 - Xếp hạng: Gold (Top 10%)  
 - Thời gian hoàn thành: khoảng 09 phút  
 
-Ảnh chụp kết quả có kèm dấu hiệu cá nhân (đăng nhập trình duyệt) được lưu trong file `Cantunsee.png`.
+Ảnh chụp kết quả có kèm dấu hiệu cá nhân (đăng nhập trình duyệt) được lưu trong tài liệu `Cantunsee.png`.
+<img width="1918" height="1199" alt="image" src="https://github.com/user-attachments/assets/0d320156-09e6-47d6-bd82-7db9f94247ed" />
+
 
 #### 4.1.4. Nhận xét và đánh giá
-- Bài test giúp rèn luyện khả năng phát hiện **các lỗi giao diện nhỏ nhưng ảnh hưởng lớn đến trải nghiệm người dùng**
+- Bài kiểm tra giúp rèn luyện khả năng phát hiện **các lỗi giao diện nhỏ nhưng ảnh hưởng lớn đến trải nghiệm người dùng**
 - Một số lỗi thường gặp:
   - Sai lệch căn lề
   - Khoảng cách giữa các thành phần không đồng đều
@@ -71,11 +71,11 @@ Trong suốt học phần, sinh viên thực hành với các công cụ sau:
 ### 5.1. Chủ đề: Phân tích dữ liệu điểm số học sinh
 
 #### 5.1.1. Mục tiêu
-- Nắm được cách viết **kiểm thử tự động (Unit Test)** bằng **JUnit**
+- Nắm được cách viết **kiểm thử tự động (unit ttest)** bằng **JUnit**
 - Áp dụng kiểm thử đơn vị cho các hàm xử lý dữ liệu
 - Biết cách khai thác **AI tạo sinh** để:
   - Hỗ trợ viết mã nguồn
-  - Gợi ý test case
+  - Gợi ý trường hợp kiểm thử (test case)
   - Kiểm tra và phân tích logic chương trình
 
 #### 5.1.2. Mô tả bài toán
@@ -100,12 +100,13 @@ Yêu cầu xử lý dữ liệu:
 - Quản lý công việc: GitHub Issues  
 
 #### 5.1.4. Cấu trúc thư mục
+```
 /unit-test/
 /├── pom.xml
 /├── src/
 /│ ├── main/java/analyzer/StudentAnalyzer.java
 /│ └── test/java/analyzer/StudentAnalyzerTest.java
-
+```
 
 #### 5.1.5. Mô tả chức năng
 
@@ -120,7 +121,7 @@ Yêu cầu xử lý dữ liệu:
 - Trả về 0 nếu không có điểm hợp lệ  
 
 #### 5.1.6. Kiểm thử với JUnit
-Các test case được xây dựng theo các nhóm sau:
+Các trường hợp kiểm thử (test case) được xây dựng theo các nhóm sau:
 
 - Trường hợp bình thường:
   - Danh sách có cả điểm hợp lệ và không hợp lệ
@@ -132,12 +133,9 @@ Các test case được xây dựng theo các nhóm sau:
   - Có điểm nhỏ hơn 0
   - Có điểm lớn hơn 10
 
-Kết quả: **Tất cả các test case đều chạy thành công (PASS)**.
+Kết quả: **Tất cả các test case đều chạy thành công**.
 
-#### 5.1.7. Hướng dẫn chạy chương trình và kiểm thử
-
-Cách 1: Chạy bằng IntelliJ IDEA  
-1. Mở project `unit-test`  
+#### 5.1.7. Hướng dẫn chạy chương trình vàán `unit-test`  
 2. Chuột phải vào lớp `StudentAnalyzerTest`  
 3. Chọn `Run 'StudentAnalyzerTest'`  
 4. Quan sát kết quả kiểm thử  
@@ -146,3 +144,62 @@ Cách 2: Chạy bằng Maven
 Mở Terminal trong IntelliJ IDEA và chạy:
 ```bash
 mvn test
+```
+---
+
+## 6. Bài tập thực hành kiểm thử tự động End-to-End với Cypress  
+### 6.1. Chủ đề: Kiểm thử End-to-End cho ứng dụng Web
+
+#### 6.1.1. Mục tiêu
+- Hiểu được khái niệm và vai trò của **kiểm thử End-to-End (E2E)** trong quy trình phát triển phần mềm
+- Làm quen với **Cypress** – công cụ kiểm thử E2E phổ biến cho ứng dụng web
+- Thực hành xây dựng kịch bản kiểm thử mô phỏng **hành vi thực tế của người dùng**
+- Rèn luyện kỹ năng:
+  - Viết trường hợp kiểm thử (test case) tự động
+  - Xác định luồng nghiệp vụ chính
+  - Phát hiện lỗi giao diện và chức năng
+
+#### 6.1.2. Mô tả bài toán
+Thực hiện kiểm thử End-to-End cho một **ứng dụng Web mẫu** với các chức năng cơ bản như:
+- Truy cập trang chủ
+- Thao tác với giao diện người dùng
+- Nhập dữ liệu vào form
+- Kiểm tra kết quả hiển thị sau khi người dùng thực hiện hành động
+
+Các kịch bản kiểm thử tập trung vào:
+- Tính đúng đắn của luồng nghiệp vụ
+- Khả năng phản hồi của giao diện
+- Tính ổn định của ứng dụng khi người dùng ththành
+- Ứng dụng hoạt động ổn định trong các luồng kiểm thử chính
+- Không phát hiện lỗi nghiêm trọng ảnh hưởng đến trải nghiệm người dùng
+
+Kết quả chạy kiểm thử được quan sát trực tiếp thông qua **Cypress Test Runner**.
+
+---
+
+#### 6.1.7. Hướng dẫn cài đặt và chạy kiểm thử
+
+Bước 1: Cài đặt Node.js (phiên bản LTS)
+
+Bước 2: Cài đặt các thư viện cần thiết:
+```bash
+npm install
+```
+
+Bước 3: Chạy kiểm thử với giao diện Cypress:
+```bash
+npx cypress open
+```
+
+Bước 4: Chạy kiểm thử ở chế độ tự động (headless):
+```bash
+npx cypress run
+```
+Ảnh cắt mã khi chạy theo trường hợp kiểm thử với thêm vào giỏ hàng:
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/6e64cd4e-2850-4e76-889e-2a3cfe9d6843" />
+
+#### 6.1.8. Nhận xét và đánh giá
+- Cypress cho phép kiểm thử End-to-End một cách trực quan và dễ sử dụng
+- Các kịch bản kiểm thử mô phỏng sát hành vi thực tế của người dùng
+- Công cụ giúp phát hiện sớm lỗi giao diện và lỗi luồng nghiệp vụ
+- Kiểm thử End-to-End đóng vai trò quan trọng trong việc đảm bảo chất lượng tổng thể của hệ thống
