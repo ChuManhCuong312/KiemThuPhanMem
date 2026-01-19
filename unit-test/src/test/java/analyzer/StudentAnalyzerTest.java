@@ -52,6 +52,27 @@ public class StudentAnalyzerTest {
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(10.5)));
     }
 
+    // ======= BỔ SUNG =======
+
+    @Test
+    public void testCountExcellentStudents_WithMaxScore10() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(1, analyzer.countExcellentStudents(Arrays.asList(10.0)));
+    }
+
+    @Test
+    public void testCountExcellentStudents_WithMinScore0() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(0.0)));
+    }
+
+    @Test
+    public void testCountExcellentStudents_AllInvalidAndNull() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(null, -2.0, 15.0)));
+    }
+
+
     // ===== TEST calculateValidAverage =====
 
     @Test
@@ -94,5 +115,38 @@ public class StudentAnalyzerTest {
     public void testCalculateValidAverage_AllNull() {
         StudentAnalyzer analyzer = new StudentAnalyzer();
         assertEquals(0, analyzer.calculateValidAverage(Arrays.asList(null, null)));
+    }
+
+    // ======= BỔ SUNG =======
+
+    @Test
+    public void testCalculateValidAverage_SingleValidScore() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(7.5, analyzer.calculateValidAverage(Arrays.asList(7.5)));
+    }
+
+    @Test
+    public void testCalculateValidAverage_SingleInvalidScore() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0, analyzer.calculateValidAverage(Arrays.asList(12.0)));
+    }
+
+    @Test
+    public void testCalculateValidAverage_MixedValidInvalidNull() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        double avg = analyzer.calculateValidAverage(Arrays.asList(10.0, 5.0, -1.0, null, 11.0));
+        assertEquals(7.5, avg);
+    }
+
+    @Test
+    public void testCalculateValidAverage_OnlyMaxScore10() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(10.0, analyzer.calculateValidAverage(Arrays.asList(10.0)));
+    }
+
+    @Test
+    public void testCalculateValidAverage_OnlyMinScore0() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0.0, analyzer.calculateValidAverage(Arrays.asList(0.0)));
     }
 }
