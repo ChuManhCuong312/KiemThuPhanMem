@@ -52,8 +52,6 @@ public class StudentAnalyzerTest {
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(10.5)));
     }
 
-    // ======= BỔ SUNG =======
-
     @Test
     public void testCountExcellentStudents_WithMaxScore10() {
         StudentAnalyzer analyzer = new StudentAnalyzer();
@@ -77,6 +75,21 @@ public class StudentAnalyzerTest {
         StudentAnalyzer analyzer = new StudentAnalyzer();
         assertEquals(0, analyzer.countExcellentStudents(null));
     }
+
+    // ======= BỔ SUNG LOGIC =======
+
+    @Test
+    public void testCountExcellentStudents_AllExcellent() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(3, analyzer.countExcellentStudents(Arrays.asList(8.0, 9.0, 10.0)));
+    }
+
+    @Test
+    public void testCountExcellentStudents_AllValidButNotExcellent() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(0.0, 5.5, 7.9)));
+    }
+
 
     // ===== TEST calculateValidAverage =====
 
@@ -122,8 +135,6 @@ public class StudentAnalyzerTest {
         assertEquals(0, analyzer.calculateValidAverage(Arrays.asList(null, null)));
     }
 
-    // ======= BỔ SUNG =======
-
     @Test
     public void testCalculateValidAverage_SingleValidScore() {
         StudentAnalyzer analyzer = new StudentAnalyzer();
@@ -159,5 +170,19 @@ public class StudentAnalyzerTest {
     public void testCalculateValidAverage_NullList() {
         StudentAnalyzer analyzer = new StudentAnalyzer();
         assertEquals(0, analyzer.calculateValidAverage(null));
+    }
+
+    // ======= BỔ SUNG LOGIC =======
+
+    @Test
+    public void testCalculateValidAverage_AllValidScores() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(6.0, analyzer.calculateValidAverage(Arrays.asList(4.0, 6.0, 8.0)));
+    }
+
+    @Test
+    public void testCalculateValidAverage_AllValidFractional() {
+        StudentAnalyzer analyzer = new StudentAnalyzer();
+        assertEquals(7.33, analyzer.calculateValidAverage(Arrays.asList(7.0, 7.0, 8.0)), 0.01);
     }
 }
