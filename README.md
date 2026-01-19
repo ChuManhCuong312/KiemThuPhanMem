@@ -145,6 +145,36 @@ Mở Terminal trong IntelliJ IDEA và chạy:
 ```bash
 mvn test
 ```
+
+#### 5.1.8. Đo độ bao phủ kiểm thử (Code Coverage)
+
+Để đánh giá mức độ bao phủ của các test case đối với mã nguồn, em đã sử dụng công cụ JaCoCo tích hợp trong Maven.
+
+**Công cụ sử dụng:**
+- JaCoCo Maven Plugin
+- JUnit 5
+
+**Kết quả đo lường:**
+
+| Thành phần | Độ bao phủ |
+|-----------|-----------|
+| Instruction Coverage | 100% |
+| Branch Coverage | 100% |
+| Line Coverage | 100% |
+| Method Coverage | 100% |
+| Class Coverage | 100% |
+
+Báo cáo JaCoCo sau khi chạy kiểm thử:
+<img width="1354" height="159" alt="Screenshot 2026-01-19 172609" src="https://github.com/user-attachments/assets/35fcc53a-f2ef-4662-8589-4014e898a16a" />
+
+**Nhận xét:**
+- Toàn bộ các dòng lệnh và nhánh điều kiện trong lớp `StudentAnalyzer` đều đã được kiểm thử.
+- Điều này cho thấy các test case được xây dựng đầy đủ, giúp đảm bảo tính đúng đắn và ổn định của chương trình.
+- Việc đạt 100% code coverage là minh chứng cho chất lượng kiểm thử đơn vị của bài thực hành.
+
+**Kết luận:**
+Chương trình `StudentAnalyzer` đã đạt độ bao phủ kiểm thử tối đa (100%), thể hiện việc áp dụng đúng kỹ thuật kiểm thử đơn vị và đảm bảo chất lượng mã nguồn.
+
 ---
 
 ## 6. Bài tập thực hành kiểm thử tự động End-to-End với Cypress  
@@ -201,5 +231,7 @@ npx cypress run
 #### 6.1.8. Nhận xét và đánh giá
 - Cypress cho phép kiểm thử End-to-End một cách trực quan và dễ sử dụng
 - Các kịch bản kiểm thử mô phỏng sát hành vi thực tế của người dùng
+
+
 - Công cụ giúp phát hiện sớm lỗi giao diện và lỗi luồng nghiệp vụ
 - Kiểm thử End-to-End đóng vai trò quan trọng trong việc đảm bảo chất lượng tổng thể của hệ thống
