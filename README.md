@@ -86,11 +86,12 @@ Chương trình gồm lớp `StudentAnalyzer` với hai chức năng chính:
 - Tính **điểm trung bình hợp lệ** của danh sách điểm
 
 Yêu cầu xử lý dữ liệu:
-- Chỉ chấp nhận điểm trong khoảng từ 0 đến 10
+- Chỉ chấp nhận điểm trong khoảng từ 0 đến 10.
 - Bỏ qua các điểm:
-  - Nhỏ hơn 0
-  - Lớn hơn 10
-- Nếu danh sách rỗng, kết quả trả về là 0
+  - Nhỏ hơn 0.
+  - Lớn hơn 10.
+  - Giá trị null.
+- Nếu danh sách rỗng hoặc null, kết quả trả về là 0.
 
 #### 5.1.3. Công cụ sử dụng
 - Ngôn ngữ lập trình: Java  
@@ -112,28 +113,66 @@ Yêu cầu xử lý dữ liệu:
 
 5.1.5.1. Hàm `countExcellentStudents()`  
 - Đếm số học sinh có điểm ≥ 8.0  
-- Bỏ qua các điểm không hợp lệ  
-- Trả về 0 nếu danh sách rỗng  
+- Bỏ qua các điểm không hợp lệ (<0, >10, null) 
+- Trả về 0 nếu danh sách rỗng hoặc null.
 
 5.1.5.2. Hàm `calculateValidAverage()`  
 - Tính điểm trung bình của các điểm hợp lệ (0–10)  
-- Không tính các điểm sai dữ liệu  
+- Không tính các điểm sai dữ liệu (<0, >10, null)
 - Trả về 0 nếu không có điểm hợp lệ  
 
 #### 5.1.6. Kiểm thử với JUnit
 Các trường hợp kiểm thử (test case) được xây dựng theo các nhóm sau:
 
+- Kiểm thử hộp đen (Black-box Testing):
+  - RP (Phân vùng tương đương):
+    - Danh sách chỉ gồm các điểm hợp lệ
+    - Danh sách chỉ có điểm không hợp lệ
+    - Danh sách trộn hợp lệ – không hợp lệ – null
+    - Danh sách rỗng
+    - Danh sách null
+  - BVA (Giá trị biên):
+    - Điểm = 0
+    - Điểm = 8.0
+    - Điểm = 10
+    - Điểm < 0
+    - Điểm > 10
+  - DT (Bảng quyết định):
+    - Tất cả điểm đều hợp lệ.
+    - Tất cả điểm đều giỏi.
+    - Không có điểm giỏi.
+    - Trộn: hợp lệ + không hợp lệ + null.
+  
+- Kiểm thử hộp trắng (White-box Testing)
+  - CFG (Control Flow Graph):
+    - Bao phủ nhánh:
+    - scores == null
+    - scores.isEmpty()
+    - score == null
+    - score < 0 || score > 10
+    - score >= 8
+    - validCount == 0
+  - DFG (Data Flow Graph):
+    - Kiểm tra luồng dữ liệu của:
+    - Biến count trong countExcellentStudents()
+    - Biến sum và validCount trong calculateValidAverage()
+
+Các nhóm test case chính:
+
 - Trường hợp bình thường:
   - Danh sách có cả điểm hợp lệ và không hợp lệ
   - Danh sách chỉ gồm các điểm hợp lệ
+  - Danh sách trộn hợp lệ, không hợp lệ và null
 - Trường hợp biên:
-  - Danh sách rỗng
-  - Danh sách chỉ chứa điểm 0 hoặc 10
-- Trường hợp dữ liệu sai:
-  - Có điểm nhỏ hơn 0
-  - Có điểm lớn hơn 10
-
-Kết quả: **Tất cả các test case đều chạy thành công**.
+  - Danh sách rỗng.
+  - Danh sách chỉ chứa điểm 0.
+  - Danh sách chỉ chứa điểm 10.
+  - Điểm đúng bằng 8.0.
+- Trường hợp dữ liệu sai
+  - Có điểm nhỏ hơn 0.
+  - Có điểm lớn hơn 10.
+  - Danh sách chỉ chứa giá trị null.
+**Kết quả**: Tất cả các test case đều chạy thành công.
 
 #### 5.1.7. Hướng dẫn chạy chương trình vàán `unit-test`  
 2. Chuột phải vào lớp `StudentAnalyzerTest`  
@@ -168,13 +207,22 @@ Báo cáo JaCoCo sau khi chạy kiểm thử:
 <img width="1354" height="159" alt="Screenshot 2026-01-19 172609" src="https://github.com/user-attachments/assets/35fcc53a-f2ef-4662-8589-4014e898a16a" />
 
 **Nhận xét:**
-- Toàn bộ các dòng lệnh và nhánh điều kiện trong lớp `StudentAnalyzer` đều đã được kiểm thử.
-- Điều này cho thấy các test case được xây dựng đầy đủ, giúp đảm bảo tính đúng đắn và ổn định của chương trình.
-- Việc đạt 100% code coverage là minh chứng cho chất lượng kiểm thử đơn vị của bài thực hành.
+- Toàn bộ các dòng lệnh và nhánh điều kiện trong lớp StudentAnalyzer đều đã được kiểm thử.
+- Các test case bao phủ cả:
+  - Kiểm thử hộp đen (RP, BVA, DT).
+  - Kiểm thử hộp trắng (CFG, DFG).
+- Điều này đảm bảo:
+  - Chương trình xử lý đúng dữ liệu hợp lệ.
+  - Bỏ qua chính xác dữ liệu sai.
+  - Hoạt động ổn định với các trường hợp đặc biệt (null, empty, boundary).
 
 **Kết luận:**
-Chương trình `StudentAnalyzer` đã đạt độ bao phủ kiểm thử tối đa (100%), thể hiện việc áp dụng đúng kỹ thuật kiểm thử đơn vị và đảm bảo chất lượng mã nguồn.
-
+Chương trình StudentAnalyzer đã đạt độ bao phủ kiểm thử tối đa (100% code coverage), thể hiện:
+- Áp dụng đúng kỹ thuật kiểm thử đơn vị.
+- Thiết kế test case đầy đủ theo cả:
+  - Hộp đen (Black-box)
+  - Hộp trắng (White-box)
+- Đảm bảo chất lượng và độ tin cậy của mã nguồn.
 ---
 
 ## 6. Bài tập thực hành kiểm thử tự động End-to-End với Cypress  
