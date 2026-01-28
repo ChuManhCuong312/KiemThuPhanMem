@@ -1,4 +1,4 @@
-<img width="1514" height="945" alt="summary3" src="https://github.com/user-attachments/assets/b1c2e282-456c-4695-8386-684405d3eb40" /># THỰC HÀNH KIỂM THỬ PHẦN MỀM
+# THỰC HÀNH KIỂM THỬ PHẦN MỀM
 
 ## 1. Thông tin sinh viên
 - Họ và tên: Chu Mạnh Cường  
@@ -287,7 +287,7 @@ npx cypress run
 ## 7. Kiểm thử hiệu năng với Apache JMeter
 
 ### 7.1. Mục tiêu
-Bài kiểm thử này sử dụng **Apache JMeter** để đánh giá hiệu năng của một website (mock thử bằng https://www.wikipedia.org).  
+Bài kiểm thử này sử dụng **Apache JMeter** để đánh giá hiệu năng của một trang webweb.  
 Mục tiêu là:
 - Hiểu cách sử dụng JMeter để thực hiện kiểm thử hiệu năng.
 - Tạo nhiều kịch bản (Thread Group) với tham số khác nhau.
