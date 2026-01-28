@@ -1,4 +1,4 @@
-# THỰC HÀNH KIỂM THỬ PHẦN MỀM
+<img width="1514" height="945" alt="summary3" src="https://github.com/user-attachments/assets/b1c2e282-456c-4695-8386-684405d3eb40" /># THỰC HÀNH KIỂM THỬ PHẦN MỀM
 
 ## 1. Thông tin sinh viên
 - Họ và tên: Chu Mạnh Cường  
@@ -283,3 +283,100 @@ npx cypress run
 
 - Công cụ giúp phát hiện sớm lỗi giao diện và lỗi luồng nghiệp vụ
 - Kiểm thử End-to-End đóng vai trò quan trọng trong việc đảm bảo chất lượng tổng thể của hệ thống
+
+## 7. Kiểm thử hiệu năng với Apache JMeter
+
+### 7.1. Mục tiêu
+Bài kiểm thử này sử dụng **Apache JMeter** để đánh giá hiệu năng của một website (mock thử bằng https://www.wikipedia.org).  
+Mục tiêu là:
+- Hiểu cách sử dụng JMeter để thực hiện kiểm thử hiệu năng.
+- Tạo nhiều kịch bản (Thread Group) với tham số khác nhau.
+- Phân tích và trình bày kết quả kiểm thử.
+
+### 7.2. Công cụ sử dụng
+- **Apache JMeter (v5.6.3)** – công cụ kiểm thử hiệu năng mã nguồn mở, chạy trên Java.  
+  JMeter cho phép mô phỏng nhiều người dùng gửi **HTTP Request** đồng thời và ghi nhận các chỉ số như Response Time, Throughput, Error Rate… :contentReference[oaicite:0]{index=0}
+
+### 7.3. Đối tượng kiểm thử
+- Trang web được chọn để kiểm thử: **[https://www.wikipedia.org](https://www.example.com)**  
+- Đánh giá độ chịu tải, thời gian phản hồi và số lượng phản hồi (request) xử lý trong thời gian nhất định.
+
+### 7.4. Cấu trúc Test Plan (test-plan.jmx)
+
+#### 7.4.1 Thread Group 1 – Kịch bản cơ bản
+- **Số lượng người dùng (threads):** 10  
+- **Số vòng lặp (loop count):** 5  
+- **Hành vi:** Gửi HTTP GET tới trang chủ (/) của website
+
+#### 7.4.2 Thread Group 2 – Kịch bản tải nặng
+- **Số lượng người dùng:** 50  
+- **Ramp-up:** 30 giây  
+- **Hành vi:** Gửi GET tới:
+  - Trang chủ: `/`
+  - Trang con: `/`
+
+#### 7.4.3 Thread Group 3 – Kịch bản tùy chỉnh
+- **Số lượng người dùng:** 20  
+- **Ramp-up:** 1 giây  
+- **Loop Count:** Infinite  
+- **Duration:** 60 giây  
+- **Hành vi:** Gửi GET tới:
+  - `/`
+  - `/`
+
+### 7.5 Các thành phần bổ sung
+- **HTTP Request Defaults:** Thiết lập URL cơ bản (protocol + server) để các HTTP Request chỉ cần khai báo Path.
+- **Summary Report:** Thu thập kết quả test dưới dạng bảng thống kê.
+- **View Results Tree:** (tuỳ chọn) Xem chi tiết từng response.
+
+### 7.6. Các chỉ số thu thập
+Các chỉ số được thu thập bao gồm:
+- **# Samples:** Số lượng request được gửi
+- **Average:** Thời gian phản hồi trung bình (ms)
+- **Min/Max:** Thời gian nhỏ nhất / lớn nhất
+- **Error %:** Tỷ lệ request lỗi
+- **Throughput:** Số request/giây  
+Những chỉ số này giúp đánh giá khả năng chịu tải và thời gian xử lý dưới các mức tải khác nhau.
+
+### 7.7. Kết quả kiểm thử
+
+#### 7.7.1. Thread Group 1 – Kịch bản cơ bản
+- **Mô tả:** 10 users, 5 loop  
+- **File kết quả:** `result-threadgroup1.csv`  
+- **Ảnh minh chứng:** `summary1.png`
+
+| Thống số | Giá trị |
+|---------|---------|
+| Tổng # Samples | 50 |
+| Avg Response Time | 380 ms |
+| Throughput | 16.64447 req/sec |
+| Error % | 0.00% |
+
+#### 7.7.2. Thread Group 2 – Tải nặng
+- **File kết quả:** `result-threadgroup2.csv`  
+- **Ảnh minh chứng:** `summary2.png`
+
+| Thống số | Giá trị |
+|---------|---------|
+| Tổng # Samples | 100 |
+| Avg Response Time | 366 ms |
+| Throughput | 3.35233 req/sec |
+| Error % | 0.00% |
+
+#### 7.7.3 Thread Group 3 – Tùy chỉnh (60s)
+- **File kết quả:** `result-threadgroup3.csv`  
+- **Ảnh minh chứng:** `summary3.png`
+
+| Thống số | Giá trị |
+|---------|---------|
+| Tổng # Samples | 6790 |
+| Avg Response Time | 171 ms |
+| Throughput | 112.9859 req/sec |
+| Error % | 0.00% |
+
+### 7.8. Nhận xét chung
+- Khi tăng số lượng người dùng, thời gian trung bình và độ phân tán response time thường tăng.
+- Kịch bản tải nặng/loop kéo dài (Thread Group 3) giúp quan sát hệ thống trong thời gian thực sự chịu tải.
+- Tỷ lệ lỗi và throughput là chỉ số quan trọng để đánh giá ngưỡng chịu tải của server/web.
+
+
